@@ -26,6 +26,7 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 src/test/java/com/programmers/cat_picture_search/config
+docker-compose.yml
 
 ### NetBeans ###
 /nbproject/private/
