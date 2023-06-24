@@ -1,4 +1,4 @@
-## 🚨 Bug Issue
+## 📌 Bug Issue
 
 ## 📝 To-do
 - [ ] task1
