@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3307/catDB
-    password: admin
-    username: root
+    url: jdbc:mysql://localhost:3307/${MYSQL_DB_NAME}
+    password: ${MYSQL_PASSWORD}
+    username: ${MYSQL_USERNAME}
   jpa:
     hibernate:
       ddl-auto: create
@@ -25,4 +25,4 @@ autocomplete:
 
 the-cat-api:
   url: https://docs.thecatapi.com/
-  key: live_QEigmLSMY2PKSOMmAhBOYjNuI1LPcZildhMIBTHbBwFQIa4NgPDaqmqVqb4MfJL2
+  key: ${CAT_API_KEY}
