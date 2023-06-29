@@ -40,13 +40,17 @@ dependencies {
     implementation 'com.mysql:mysql-connector-j:8.0.33'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+
+    //gradle 5.x.x 이상 lombok 설정
     compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
 
     //yml파일 암호화 설정
     implementation 'com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.5'
 
     //Spring Open Feign
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+    implementation 'io.github.openfeign:feign-gson:11.0'
 
     annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
 
