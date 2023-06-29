@@ -24,5 +24,7 @@ autocomplete:
   delimiter: §
 
 the-cat-api:
-  url: https://docs.thecatapi.com/
+  url: https://api.thecatapi.com/
   key: ${CAT_API_KEY}
+
+
