@@ -1,9 +1,13 @@
 package com.programmers.cat_picture_search.feign.cat.dto;
 
 import java.util.List;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.ToString;
 
 @Getter
+@EqualsAndHashCode
+@ToString
 public class CatImage {
 
   /**
