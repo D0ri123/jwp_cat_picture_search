@@ -24,7 +24,7 @@ public class DataLoader implements CommandLineRunner {
   // feignClient를 호출하여 Breed 데이터와 Image 데이터를 한꺼번에 저장한다.
   @Override
   public void run(String... args) throws Exception {
-    List<CatImage> images = imageController.getImages(50L);
+    List<CatImage> images = imageController.getImages(100L);
 
     for(CatImage image : images) {
       List<String> breedIds = new ArrayList<>();
