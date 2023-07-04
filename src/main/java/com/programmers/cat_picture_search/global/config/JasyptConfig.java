@@ -1,4 +1,4 @@
-package com.programmers.cat_picture_search.config;
+package com.programmers.cat_picture_search.global.config;
 
 import org.jasypt.encryption.StringEncryptor;
 import org.jasypt.encryption.pbe.PooledPBEStringEncryptor;
@@ -12,6 +12,7 @@ public class JasyptConfig {
 
   @Value("${jasypt.encryptor.password}")
   private String PASSWORD;
+
 
   @Bean("jasyptStringEncryptor")
   public StringEncryptor stringEncryptor(){

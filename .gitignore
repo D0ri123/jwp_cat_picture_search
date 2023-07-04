@@ -27,6 +27,9 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 src/test/java/com/programmers/cat_picture_search/config
+src/main/resources/application-api-key.yml
+.env
+mysqldata/
 
 ### NetBeans ###
 /nbproject/private/
