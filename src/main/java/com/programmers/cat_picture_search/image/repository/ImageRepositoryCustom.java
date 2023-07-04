@@ -6,4 +6,5 @@ import java.util.List;
 public interface ImageRepositoryCustom {
   List<Image> get50();
 
+  List<Image> getKeywordImages(String keyword);
 }

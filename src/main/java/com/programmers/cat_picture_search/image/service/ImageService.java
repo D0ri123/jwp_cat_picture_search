@@ -14,11 +14,20 @@ public class ImageService {
 
   private final ImageRepositoryImpl imageRepositoryImpl;
 
-  //랜덤으로 50개 뽑아들고옴
+  //랜덤 이미지 50개 목록 조회
   public List<ImageDto> get50Images() {
     List<Image> randomImg50 = imageRepositoryImpl.get50();
 
     return randomImg50.stream()
+        .map(ImageDto::new)
+        .collect(Collectors.toList());
+  }
+
+  //품종 검색으로 이미지 목록 조회
+  public List<ImageDto> getSameKeywordImages(String keyword) {
+    List<Image> keywordImages = imageRepositoryImpl.getKeywordImages(keyword);
+
+    return keywordImages.stream()
         .map(ImageDto::new)
         .collect(Collectors.toList());
   }

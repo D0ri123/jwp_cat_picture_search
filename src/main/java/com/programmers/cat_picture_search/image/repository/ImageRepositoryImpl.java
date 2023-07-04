@@ -20,4 +20,12 @@ public class ImageRepositoryImpl implements ImageRepositoryCustom {
         .limit(50)
         .fetch();
   }
+
+  @Override
+  public List<Image> getKeywordImages(String keyword) {
+    QImage i = new QImage("i");
+    return jpaQueryFactory.selectFrom(i)
+        .where(i.breed.name.like(keyword))
+        .fetch();
+  }
 }
