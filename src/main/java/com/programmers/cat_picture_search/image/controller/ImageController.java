@@ -2,11 +2,14 @@ package com.programmers.cat_picture_search.image.controller;
 
 import com.programmers.cat_picture_search.feign.cat.dto.CatImage;
 import com.programmers.cat_picture_search.feign.cat.service.CatFeignService;
+import com.programmers.cat_picture_search.global.response.DataResponse;
 import com.programmers.cat_picture_search.image.dto.response.ImageDto;
 import com.programmers.cat_picture_search.image.service.ImageService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -28,8 +31,9 @@ public class ImageController {
   }
 
   @GetMapping("/cats/random/50")
-  public List<ImageDto> getRandom50() {
-    return imageService.get50Images();
+  public ResponseEntity<DataResponse<List<ImageDto> >> getRandom50() {
+    List<ImageDto> images = imageService.get50Images();
+    return new ResponseEntity<>(DataResponse.of(HttpStatus.OK, "고양이 이미지 랜덤 조회 성공", images), HttpStatus.OK);
   }
 
 }
