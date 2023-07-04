@@ -4,6 +4,8 @@ import com.programmers.cat_picture_search.feign.cat.dto.CatImage;
 import com.programmers.cat_picture_search.feign.cat.service.CatFeignService;
 import com.programmers.cat_picture_search.global.response.DataResponse;
 import com.programmers.cat_picture_search.image.dto.response.ImageDto;
+import com.programmers.cat_picture_search.image.dto.response.ImageInfoDto;
+import com.programmers.cat_picture_search.image.entity.Image;
 import com.programmers.cat_picture_search.image.service.ImageService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -43,4 +45,12 @@ public class ImageController {
         DataResponse.of(HttpStatus.OK, "키워드에 해당하는 고양이 이미지 조회 성공", sameKeywordImages), HttpStatus.OK);
   }
 
+  //품종 아이디로 고양이 사진 정보 조회
+  @GetMapping("/cats")
+  public ResponseEntity<DataResponse<ImageInfoDto>> getImageInfo(@RequestParam("id") String id) {
+    Image imageInfo = imageService.getImageInfo(id);
+    ImageInfoDto response = new ImageInfoDto(imageInfo);
+    return new ResponseEntity<>(
+        DataResponse.of(HttpStatus.OK, "id에 해당하는 고양이 이미지 조회 성공", response), HttpStatus.OK);
+  }
 }

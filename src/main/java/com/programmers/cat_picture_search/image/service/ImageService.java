@@ -31,4 +31,8 @@ public class ImageService {
         .map(ImageDto::new)
         .collect(Collectors.toList());
   }
+
+  public Image getImageInfo(String id) {
+    return imageRepositoryImpl.getImageInfo(id);
+  }
 }

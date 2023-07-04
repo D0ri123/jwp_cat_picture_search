@@ -28,4 +28,12 @@ public class ImageRepositoryImpl implements ImageRepositoryCustom {
         .where(i.breed.name.like(keyword))
         .fetch();
   }
+
+  @Override
+  public Image getImageInfo(String id) {
+    QImage i = new QImage("i");
+    return jpaQueryFactory.selectFrom(i)
+        .where(i.id.like(id))
+        .fetchOne();
+  }
 }

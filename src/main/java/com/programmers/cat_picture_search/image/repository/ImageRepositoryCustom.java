@@ -7,4 +7,6 @@ public interface ImageRepositoryCustom {
   List<Image> get50();
 
   List<Image> getKeywordImages(String keyword);
+
+  Image getImageInfo(String id);
 }
