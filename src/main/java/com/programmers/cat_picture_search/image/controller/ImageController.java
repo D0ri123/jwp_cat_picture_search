@@ -31,9 +31,16 @@ public class ImageController {
   }
 
   @GetMapping("/cats/random/50")
-  public ResponseEntity<DataResponse<List<ImageDto> >> getRandom50() {
+  public ResponseEntity<DataResponse<List<ImageDto>>> getRandom50() {
     List<ImageDto> images = imageService.get50Images();
     return new ResponseEntity<>(DataResponse.of(HttpStatus.OK, "고양이 이미지 랜덤 조회 성공", images), HttpStatus.OK);
+  }
+
+  @GetMapping("/cats/search")
+  public ResponseEntity<DataResponse<List<ImageDto>>> getKeywordImages(@RequestParam("keyword") String keyword) {
+    List<ImageDto> sameKeywordImages = imageService.getSameKeywordImages(keyword);
+    return new ResponseEntity<>(
+        DataResponse.of(HttpStatus.OK, "키워드에 해당하는 고양이 이미지 조회 성공", sameKeywordImages), HttpStatus.OK);
   }
 
 }
